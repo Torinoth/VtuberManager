@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block Content %}
+    <a class="btn btn-primary" href="{% url 'VM:TalentCreate' %}">新規追加</a>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>名前</th>
+            <th>所属</th>
+            <th>詳細</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for talent in talent_list %}
+            <tr>
+                <th scope="row">{{ talent.pk }}</th>
+                <td>{{ talent.name }}</td>
+                <td>{{ talent.affiliation }}</td>
+                <td><a href="{% url 'VM:talentDetail' talent.pk %}">詳細</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

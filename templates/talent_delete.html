@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block Content %}
+    <div class="container">
+        <div class="row">
+            <form method="post">
+                {% csrf_token %}
+                <p>
+                    削除しますか？
+                </p>
+                <button class="btn btn-primary" type="submit">削除</button>
+                <a class="btn btn-secondary" href="{% url 'VM:talentDetail' object.pk %}">キャンセル</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

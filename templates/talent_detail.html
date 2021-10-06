@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block Content %}
+    <p>{{ object.name }}</p>
+    <p>{{ object.affiliation }}</p>
+    <p><a href="{{ object.youtube }}">youtube</a></p>
+    <p><a href="{{ object.twitter }}">twitter</a></p>
+    <a class="btn btn-primary" href="{% url 'VM:TalentUpdate' object.pk %}">更新</a>
+    <a class="btn btn-secondary" href="{% url 'VM:TalentDelete' object.pk %}">削除</a>
+{% endblock %}
